@@ -1,0 +1,298 @@
+
+#counter{
+    width:200px;
+    height:50px;
+    line-height:50px;
+    font-size:20px;
+    text-align:center;
+    border:1px solid darkblue;
+    position:absolute;
+    top:30px;
+    left:60px;
+      }
+
+
+#waves{
+    width:200px;
+    height:50px;
+    line-height:50px;
+    font-size:20px;
+    text-align:center;
+    border:1px solid darkblue;
+
+    position:absolute;
+    top:30px;
+    right:60px;
+            }
+
+
+#fish{
+    width:200px;
+    height:100px;
+    line-height:50px;
+    font-size:20px;
+    text-align:center;
+    border:1px solid darkblue;
+
+    position:absolute;
+    top:30px;
+    right:80px;
+            }
+
+.example three {
+      background-image:    url("images/blackWaves.png"),
+                 url("images/transparentWaves.png"),
+     url("images/stripedWaves.png");
+  background-position: 50px 50px,
+                       12px 24px;
+  background-repeat:  no-repeat;
+}
+
+
+/*extra js*/
+
+$(window).scroll(function () {
+
+
+ //topNumber = how far you've scrolled from the top//
+
+   var topNumber = Math.floor( $(window).scrollTop() );
+
+  Math.floor(1.6);
+
+   $("#name3").text("px: " + topNumber* 0.01);
+
+  $("#name3").css({
+
+  "color":"white",
+  "background-color":"blue",
+  "top":30 + topNumber * 1.3 +"px"
+});
+
+//console.log{topNumber);
+
+if(topNumber>5000){
+
+  $("#name3").css({"top":"5px"});
+
+} else{
+
+  $("#name3").css({
+    "background-color":"green"});
+}
+
+
+$("#name2").text("px: " + topNumber* 0.03);
+
+$("#name2").css({
+
+"color":"white",
+"background-color":"blue",
+"top":30 + topNumber * 1.5 +"px"
+});
+
+
+//console.log{topNumber);
+
+if(topNumber>5000){
+
+ $("#name").css({"top":"5px"});
+
+} else{
+
+ $("#name").css({
+   });
+}
+   $("#name").text("px: " + topNumber* 0.01);
+
+  $("#name").css({
+
+  "top":300 + topNumber * -1.3 +"px"
+});
+
+
+var imgObj = null;
+           var animate ;
+
+           function init(){
+              imgObj = document.getElementById('fish');
+              imgObj.style.position= 'relative';
+              imgObj.style.left = '0px';
+           }
+
+           function moveRight(){
+              imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+              animate = setTimeout(moveRight,20); // call moveRight in 20msec
+           }
+
+           function stop(){
+              clearTimeout(animate);
+              imgObj.style.left = '0px';
+           }
+
+           window.onload =init;
+
+/*fish paragraph*/
+
+    .fadeIn {
+  animation-name: fadeIn;
+  -webkit-animation-name: fadeIn;
+  animation-duration: 1.0s;
+  -webkit-animation-duration: 1.0s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  visibility: visible !important;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: scale(0);
+    opacity: 0.0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(0.9);
+    opacity: 1;
+
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+function isScrolledIntoView(elem) {
+ var docViewTop = $(window).scrollTop();
+ var docViewBottom = docViewTop + $(window).height();
+ var elemTop = $(elem).offset().top;
+ var elemBottom = elemTop + $(elem).height();
+
+  return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+//returns from this function a boolean of true or false
+		}
+
+
+/*text boxes*/
+    $(".fishParagraph").css({
+   if ($(".fishParagraph").scrollTop() > 200) {
+        $(".fishParagraph").stop().animate({
+            opacity: 1
+        }, 500);
+    } else {
+        $(".fishParagraph").stop().animate({
+            opacity: 0
+        }, 500);
+    }
+});
+
+
+
+/*waves*/
+
+	$("#waves").text("px: " + topNumber * 0.02);
+
+	$("#waves").css({
+
+		"color": "white",
+		"background-color": "blue",
+		"top": 30 + topNumber * 1.4 + "px"
+	});
+
+	//console.log{topNumber);
+	if(topNumber>5000){
+
+	$("#waves").css({"top":"5px"});
+
+	} else{
+
+		$("#waves").css({
+		   "background-color":"orange"});
+	}
+
+
+  /*Paralax bubbles*/
+  //topNumber = how far you've scrolled from the top//
+
+  $(window).scroll(function () {
+
+
+   //topNumber = how far you've scrolled from the top//
+
+  	 var topNumber = Math.floor( $(window).scrollTop() );
+
+  	Math.floor(1.6);
+
+  	 $("#bubble1").text("px: " + topNumber* 0.01);
+
+  	$("#bubble1").css({
+
+  	"color":"white",
+  	"background-color":"blue",
+  	"top":30 + topNumber * 1.3 +"px"
+  });
+
+  //console.log{topNumber);
+
+  if(topNumber>5000){
+
+  	$("#bubble1").css({"top":"5px"});
+
+  } else{
+
+  	$("#bubble1").css({
+  		"background-color":"green"});
+  }
+
+
+  $("#bubble2").text("px: " + topNumber* 0.03);
+
+  $("#bubble2").css({
+
+  "color":"white",
+  "background-color":"blue",
+  "top":30 + topNumber * 1.5 +"px"
+  });
+
+
+  //console.log{topNumber);
+
+  if(topNumber>5000){
+
+   $("#bubble3").css({"top":"5px"});
+
+  } else{
+
+   $("#bubble3").css({
+  	 });
+  }
+  	 $("#bubble3").text("px: " + topNumber* 0.01);
+
+  	$("#bubble3").css({
+
+  	"top":300 + topNumber * -1.3 +"px"
+  });
+
+
+  var imgObj = null;
+  					 var animate ;
+
+  					 function init(){
+  							imgObj = document.getElementById('bubble');
+  							imgObj.style.position= 'relative';
+  							imgObj.style.left = '0px';
+  					 }
+
+  					 function moveRight(){
+  							imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+  							animate = setTimeout(moveRight,20); // call moveRight in 20msec
+  					 }
+
+  					 function stop(){
+  							clearTimeout(animate);
+  							imgObj.style.left = '0px';
+  					 }
+
+  					 window.onload =init;
